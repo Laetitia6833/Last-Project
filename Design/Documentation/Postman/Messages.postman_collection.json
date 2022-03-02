@@ -1,0 +1,232 @@
+{
+	"info": {
+		"_postman_id": "8e5ce7e2-c6f9-4ecb-9573-1ae32a2da41f",
+		"name": "Messages",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "send Message",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZjk0MWFmMzA4MTI1MzI4MTgzMDg1NSIsInJvbGUiOiJTVFVERU5UIiwiaWF0IjoxNjQzOTY3NzU5LCJleHAiOjE2NDQwMDM3NTl9.hha3KC6KZuj-0Pn4lre0EfGHBCCl8UEsSVEwUdpBpe0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "from",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "to",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "content",
+							"value": "contenu du message",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/messages/sendMessage",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"messages",
+						"sendMessage"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET messages by Missions",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZjk0MWFmMzA4MTI1MzI4MTgzMDg1NSIsInJvbGUiOiJTVFVERU5UIiwiaWF0IjoxNjQzOTc0NjY1LCJleHAiOjE2NDQwMTA2NjV9.qlDMtRx1HYz_6kH_8iKoDYHmPRjxQvmW_jvo0xRy5w8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/messages/getMissionMessages/61fd15f609ffa0da0fde00b1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"messages",
+						"getMissionMessages",
+						"61fd15f609ffa0da0fde00b1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Accept / Refuse mission",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZjk0MWFmMzA4MTI1MzI4MTgzMDg1NSIsInJvbGUiOiJTVFVERU5UIiwiaWF0IjoxNjQzOTk3MTgwLCJleHAiOjE2NDQwMzMxODB9.-I9cjs0cCxINTQGMDGzZOStVs8il3azvb_O-2BEuv8w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "accepted",
+							"value": "true",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/missions/giveAnswer/61fd66c9d26f22e83c0ecfe4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"missions",
+						"giveAnswer",
+						"61fd66c9d26f22e83c0ecfe4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User set mission done true/false",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZjEwMDViMWM3OTlhZmQ2ZjE3YTBmNyIsInJvbGUiOiJVU0VSIiwiaWF0IjoxNjQ0MDAwNjQzLCJleHAiOjE2NDQwMzY2NDN9.0Rf3OhPLEPluXX2SEsjGPYcTSTEWuPgBrUqcHrJKrZQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "done",
+							"value": "true",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/missions/missionDone/61fd714710b20c895ceb0f6b",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"missions",
+						"missionDone",
+						"61fd714710b20c895ceb0f6b"
+					],
+					"query": [
+						{
+							"key": "done",
+							"value": "true",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Post Comment about mission",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/comments/addMissionComment/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"comments",
+						"addMissionComment",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get unRead Messages",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZjk0MWFmMzA4MTI1MzI4MTgzMDg1NSIsInJvbGUiOiJTVFVERU5UIiwiaWF0IjoxNjQ0MzI1NzIzLCJleHAiOjE2NDQzNjE3MjN9.z2Dw85WdAxBKX_E1nLtlkksFJsjDZKXttJ96KvlQr7A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/messages/getUnSeenMessages/6203b672052fce62e93549b7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"messages",
+						"getUnSeenMessages",
+						"6203b672052fce62e93549b7"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

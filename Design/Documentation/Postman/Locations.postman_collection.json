@@ -1,0 +1,49 @@
+{
+	"info": {
+		"_postman_id": "02bbd506-6dce-4716-a69a-8991521b6121",
+		"name": "Locations",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET all locations",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/locations",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"locations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET location by User ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/locations/byUser/61f8fb2aa5423cbd416fdb03",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"locations",
+						"byUser",
+						"61f8fb2aa5423cbd416fdb03"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

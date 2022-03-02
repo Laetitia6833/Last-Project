@@ -1,0 +1,60 @@
+/* button */
+.btn {
+    /* margin-right: 10px; */
+    border-radius: 9999px;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+.btn-tag { 
+    background: #FFE26F;
+    border-radius: 9999px;
+    /* margin: 5px; */
+    padding: 5px 10px;
+    border:none;
+    color: #0083B7;
+    cursor: pointer;
+
+}
+
+.btn-red {
+    background: #FF5959;
+    color: white;
+    border: 1px solid #FF5959;
+    transition: all .3s;
+}
+.btn-red:hover {
+    background: transparent;
+    color: #FF5959;
+
+}
+
+.btn-blue {
+    background: #0083B7;
+    color: white;
+    border: 1px solid #0083B7;
+    transition: all .3s;
+}
+.btn-blue:hover {
+    background: transparent;
+    color: #0083B7;
+}
+.btn-yellow {
+    background: #FFE26F;
+}
+
+/* text */
+h1 { 
+    font-size:30px;
+}
+h3 { 
+    font-size: 20px
+}
+
+.success {
+    color: green;
+}
+
+.bold {
+    font-weight: bold;
+}

@@ -1,0 +1,154 @@
+{
+	"info": {
+		"_postman_id": "8fca8dc1-3a53-42ca-b701-696c63d2a1c7",
+		"name": "Missions",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "create Mission",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var moment = require('moment')\r",
+							"\r",
+							"\r",
+							"pm.environment.set(\"createdAt\", moment().format(\"DD-MM-YY hh:mm:ss\"))\r",
+							"pm.environment.set(\"missionDate\", new Date('2022-03-22'))\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZjEwMDViMWM3OTlhZmQ2ZjE3YTBmNyIsInJvbGUiOiJVU0VSIiwiaWF0IjoxNjQzODkyNjkyLCJleHAiOjE2NDM5Mjg2OTJ9.8llYS68At3C5wVCRYdvlB3D_XAw3DkWemjBWl0Fz0ho",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "description",
+							"value": "my description",
+							"type": "text"
+						},
+						{
+							"key": "studentId",
+							"value": "68",
+							"type": "text"
+						},
+						{
+							"key": "createdAt",
+							"value": "{{createdAt}}",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "missionDate",
+							"value": "{{missionDate}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/missions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"missions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET student missions",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/missions/doneMissions/61f941af3081253281830855",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"missions",
+						"doneMissions",
+						"61f941af3081253281830855"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get accepted Missions",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZjEwMDViMWM3OTlhZmQ2ZjE3YTBmNyIsInJvbGUiOiJVU0VSIiwiaWF0IjoxNjQ0MjQ4NTI0LCJleHAiOjE2NDQyODQ1MjR9.aI4SdDkug4MsNIYGC6SH2QT98IvJDwIk_OCCCnSDSkc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "status",
+							"value": "COMING",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/missions/changeMissionStatus/62014326147d0dc398da75da",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"missions",
+						"changeMissionStatus",
+						"62014326147d0dc398da75da"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

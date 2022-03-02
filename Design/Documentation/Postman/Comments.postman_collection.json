@@ -1,0 +1,58 @@
+{
+	"info": {
+		"_postman_id": "2f19416d-150a-44ac-8479-ee07392c130b",
+		"name": "Comments",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "comments by student ID",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\": \"61f262967005e0852beb6362\",\r\n    \"studentId\": \"61f2bc02cd4058c44dc096a1\",\r\n    \"content\": \"new comment\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/comments/61f2bc02cd4058c44dc096a1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"comments",
+						"61f2bc02cd4058c44dc096a1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "comments by student ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/comments/61f8fb2aa5423cbd416fdb03",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"comments",
+						"61f8fb2aa5423cbd416fdb03"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

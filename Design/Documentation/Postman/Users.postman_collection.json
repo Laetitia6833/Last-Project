@@ -1,0 +1,393 @@
+{
+	"info": {
+		"_postman_id": "cebfb3a0-aab9-495e-a184-9ee75eae0134",
+		"name": "Users",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET all users",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZjNmNDM5YzlhNjk4ODk3ZDE2NjEwMiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY0MzM4MjA3NSwiZXhwIjoxNjQzNDE4MDc1fQ.V7rOJaYp9CPZsvEJbVoREv6N2eK3GEirFr9Zew5jOGs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin DELETE User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{adminToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/users/{{userid}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"{{userid}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET User by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/users/getUser/61f1005b1c799afd6f17a0f7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"getUser",
+						"61f1005b1c799afd6f17a0f7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin UPDATE User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{AdminToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "lastname",
+							"value": "new lastname",
+							"type": "text"
+						},
+						{
+							"key": "firstname",
+							"value": "new firstname",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "newemail@email.com",
+							"type": "text"
+						},
+						{
+							"key": "roles",
+							"value": "bj",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/{{userId}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"{{userId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin Verify User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZjNmNDM5YzlhNjk4ODk3ZDE2NjEwMiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY0MzYzOTkxMywiZXhwIjoxNjQzNjc1OTEzfQ.f3KvJxzORzEDPNFYvOXWrJ3t3O3y4a2wafXdKdEzHRc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "email",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/verifyUser/{{userId}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"verifyUser",
+						"{{userId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE self",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{userToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "",
+							"value": "labas",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/updateSelf/{{userId}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"updateSelf",
+						"{{userId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User add competences to hisSelf",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZjk0MWFmMzA4MTI1MzI4MTgzMDg1NSIsInJvbGUiOiJTVFVERU5UIiwiaWF0IjoxNjQzNzg4MDQwLCJleHAiOjE2NDM4MjQwNDB9.a2Aabqy28NqqXgNsDgJ2tmOotaWF1nGjbPINRnQw-Yw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"id\": 89,\r\n        \"name\": \"competences name\"\r\n    },\r\n    {\r\n        \"id\": 10,\r\n        \"name\": \"an other competence\"\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/addCompetences/61f941af3081253281830855",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"addCompetences",
+						"61f941af3081253281830855"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "student ADD tags",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZjk0MWFmMzA4MTI1MzI4MTgzMDg1NSIsInJvbGUiOiJTVFVERU5UIiwiaWF0IjoxNjQzNzg4MDQwLCJleHAiOjE2NDM4MjQwNDB9.a2Aabqy28NqqXgNsDgJ2tmOotaWF1nGjbPINRnQw-Yw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"name\": \"tag\"\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/tags/studentAdd",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tags",
+						"studentAdd"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search users by Location && || tags",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "location",
+							"value": "69",
+							"type": "text"
+						},
+						{
+							"key": "tag",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/searchUsers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"searchUsers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "pass user notification do see = true",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZjk0MWFmMzA4MTI1MzI4MTgzMDg1NSIsInJvbGUiOiJTVFVERU5UIiwiaWF0IjoxNjQ0MzI1NzIzLCJleHAiOjE2NDQzNjE3MjN9.z2Dw85WdAxBKX_E1nLtlkksFJsjDZKXttJ96KvlQr7A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/users/notificationsToSeen/61f941af3081253281830855",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"notificationsToSeen",
+						"61f941af3081253281830855"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get Three Students",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/users/getThree",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"getThree"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
